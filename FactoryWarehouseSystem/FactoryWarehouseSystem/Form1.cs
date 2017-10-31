@@ -16,5 +16,18 @@ namespace FactoryWarehouseSystem
         {
             InitializeComponent();
         }
+
+        private void btnIssueTON_Click(object sender, EventArgs e)
+        {
+            IssueTON frmIssueTON = new IssueTON();
+            frmIssueTON.ShowDialog();
+            
+        }
+
+        private void btnAddNewItem_Click(object sender, EventArgs e)
+        {
+            AddNewItem addNewItem = new AddNewItem();
+            addNewItem.ShowDialog();
+        }
     }
 }
