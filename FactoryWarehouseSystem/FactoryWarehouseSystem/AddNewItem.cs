@@ -11,23 +11,32 @@ using System.Windows.Forms;
 namespace FactoryWarehouseSystem
 {
     public partial class AddNewItem : Form
-    {
+    {     
         public AddNewItem()
         {
             InitializeComponent();
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            Database db = new Database();
+        {         
             DataTable dt = new DataTable();
-            if (string.IsNullOrEmpty(txtItemName.Text)||string.IsNullOrEmpty(txtItemCode.Text))
+            if (string.IsNullOrEmpty(txtItemName.Text) || string.IsNullOrEmpty(txtItemCode.Text) || string.IsNullOrEmpty(txtUnitPrice.Text)||string.IsNullOrEmpty(txtQty.Text))
             {
-                MessageBox.Show("Item name & code cannot be empty!");
+                MessageBox.Show("Empty Fields!");
+            }
+            else if (!txtQty.Text.Any(char.IsDigit)||!txtUnitPrice.Text.Any(Char.IsDigit))
+            {
+                MessageBox.Show("Quantity and Price cannot contain letters! Please check.");
             }
             else
             {
-                dt = db.select("select * from item");
+                Item item = new Item();
+                item.ItemCode = txtItemCode.Text;
+                item.ItemName = txtItemName.Text;
+                item.ItemQty = Convert.ToInt32(txtQty.Text);
+                item.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
+
+                dt = item.getItemDetails();
                 dataGridView1.DataSource = dt;
 
                 foreach (DataRow dr in dt.Rows)
@@ -39,34 +48,37 @@ namespace FactoryWarehouseSystem
                     }
                     else
                     {
-                        db.inserUpdateDelete("insert into item (itemCode, itemName) values ('" + txtItemCode.Text + "','" + txtItemName.Text + "') ");
+                        item.addItem();
+                        txtItemCode.Clear();
+                        txtItemName.Clear();
+                        txtUnitPrice.Clear();
+                        txtQty.Clear();
                         break;
                     }
-                }     
-                txtItemCode.Clear();
-                txtItemName.Clear();
+                }                     
+                dt = item.getItemDetails();
+                dataGridView1.DataSource = dt;
             }
         }
 
         private void AddNewItem_Load(object sender, EventArgs e)
-        {
-            Database db = new Database();
+        {            
             DataTable dt = new DataTable();
-            dt = db.select("select * from item");
+            Item item = new Item();
+            dt = item.getItemDetails();
             dataGridView1.DataSource = dt;   
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int selected =Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            Database db = new Database();
-            string q = "delete from item where itemID = " + selected + "";
+            Item item = new Item();
+            int selected =Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);              
             DialogResult dr = MessageBox.Show("Are you sure want to delete?", "Warning!", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                db.inserUpdateDelete(q);
+                item.deleteItem(selected);
                 DataTable dt = new DataTable();
-                dt = db.select("select * from item");
+                dt = item.getItemDetails();
                 dataGridView1.DataSource = dt;
             }            
         }

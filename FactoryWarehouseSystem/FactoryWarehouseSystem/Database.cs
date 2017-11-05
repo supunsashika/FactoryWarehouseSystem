@@ -21,14 +21,11 @@ namespace FactoryWarehouseSystem
         {
             try
             {
-
-                con = new SqlConnection("Data Source=DESKTOP-PLMQAVR\\SQLEXPRESS;Initial Catalog=LankaTiles;Integrated Security=True");
-
+                con = new SqlConnection("Data Source=DESKTOP-PLMQAVR\\SQLEXPRESS;Initial Catalog=LankaTiles2;Integrated Security=True");
             }
             catch (Exception)
             {
                 MessageBox.Show("Cannot connect to Database!");
-
             }
 
         }
@@ -55,7 +52,7 @@ namespace FactoryWarehouseSystem
 
         public void inserUpdateDelete(String query)
         {
-            con.ConnectionString = "Data Source=DESKTOP-PLMQAVR\\SQLEXPRESS;Initial Catalog=LankaTiles;Integrated Security=True";
+            con.ConnectionString = "Data Source=DESKTOP-PLMQAVR\\SQLEXPRESS;Initial Catalog=LankaTiles2;Integrated Security=True";
             con.Open();
             cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
@@ -79,6 +76,13 @@ namespace FactoryWarehouseSystem
             con.Close();
             return dt;
         }
+        /*public SqlDataReader getCmbValues(string query)
+        {            
+            con.Open();
+            cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();            
+            return dr;            
+        }*/
 
     }
 }

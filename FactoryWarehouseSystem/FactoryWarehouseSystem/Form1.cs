@@ -29,5 +29,16 @@ namespace FactoryWarehouseSystem
             AddNewItem addNewItem = new AddNewItem();
             addNewItem.ShowDialog();
         }
+
+        private void btnAddInvoice_Click(object sender, EventArgs e)
+        {
+            Invoice_Management invoice_Management = new Invoice_Management();
+            invoice_Management.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

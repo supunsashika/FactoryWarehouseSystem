@@ -32,7 +32,7 @@
             this.txtTONNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFromLocation = new System.Windows.Forms.TextBox();
             this.cmbDestination = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
@@ -90,14 +90,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Destination";
             // 
-            // textBox2
+            // txtFromLocation
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(78, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 20);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Text = "Ranala Lanka Tiles Factory";
+            this.txtFromLocation.Enabled = false;
+            this.txtFromLocation.Location = new System.Drawing.Point(78, 54);
+            this.txtFromLocation.Name = "txtFromLocation";
+            this.txtFromLocation.Size = new System.Drawing.Size(191, 20);
+            this.txtFromLocation.TabIndex = 4;
+            this.txtFromLocation.Text = "Ranala Lanka Tiles Factory";
             // 
             // cmbDestination
             // 
@@ -155,6 +155,7 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Items";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnDelete
             // 
@@ -204,8 +205,6 @@
             // cmbItemName
             // 
             this.cmbItemName.FormattingEnabled = true;
-            this.cmbItemName.Items.AddRange(new object[] {
-            "Rajagiriya Warehouse"});
             this.cmbItemName.Location = new System.Drawing.Point(67, 54);
             this.cmbItemName.Name = "cmbItemName";
             this.cmbItemName.Size = new System.Drawing.Size(191, 21);
@@ -214,12 +213,11 @@
             // cmbItemCode
             // 
             this.cmbItemCode.FormattingEnabled = true;
-            this.cmbItemCode.Items.AddRange(new object[] {
-            "Rajagiriya Warehouse"});
             this.cmbItemCode.Location = new System.Drawing.Point(67, 27);
             this.cmbItemCode.Name = "cmbItemCode";
             this.cmbItemCode.Size = new System.Drawing.Size(191, 21);
             this.cmbItemCode.TabIndex = 10;
+            this.cmbItemCode.SelectedIndexChanged += new System.EventHandler(this.cmbItemCode_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -275,6 +273,7 @@
             this.btnIssue.TabIndex = 11;
             this.btnIssue.Text = "Issue Transfer Out Note";
             this.btnIssue.UseVisualStyleBackColor = true;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
             // 
             // IssueTON
             // 
@@ -288,7 +287,7 @@
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbDestination);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtFromLocation);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTONNo);
@@ -310,7 +309,7 @@
         private System.Windows.Forms.TextBox txtTONNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFromLocation;
         private System.Windows.Forms.ComboBox cmbDestination;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDate;
