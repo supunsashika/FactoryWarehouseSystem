@@ -18,7 +18,7 @@ namespace FactoryWarehouseSystem
             InitializeComponent();
         }
 
-        private void Invoice_Management_Load(object sender, EventArgs e)
+        public void Invoice_Management_Load(object sender, EventArgs e)
         {
             Invoice invoice = new Invoice();
             DataTable dt = new DataTable();
@@ -56,6 +56,16 @@ namespace FactoryWarehouseSystem
                 dt = invoice.getInvoice();
                 dataGridView1.DataSource = dt;
             }            
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Invoice invoice = new Invoice();
+            DataTable dt = new DataTable();
+            Database db = new Database();
+            db.inserUpdateDelete("delete from invTemp");
+            dt = invoice.getInvoice();
+            dataGridView1.DataSource = dt;
         }
     }
 }

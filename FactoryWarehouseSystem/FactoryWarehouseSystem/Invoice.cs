@@ -57,7 +57,7 @@ namespace FactoryWarehouseSystem
         public void addInvoice()
         {
             Database db = new Database();
-            string query = "insert into invoice (date, cusName) values ('" + DateTime.Now.ToString() + "','" + cusName + "') ";
+            string query = "insert into invoice values ("+id+",'" + DateTime.Now.ToString() + "','" + cusName + "') ";
             db.inserUpdateDelete(query);
             addInvDetails();
             MessageBox.Show("Invoice Added!");

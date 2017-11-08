@@ -30,7 +30,7 @@ namespace FactoryWarehouseSystem
             }
             else
             {
-                Item item = new Item();
+                Item item = new Item();              
                 item.ItemCode = txtItemCode.Text;
                 item.ItemName = txtItemName.Text;
                 item.ItemQty = Convert.ToInt32(txtQty.Text);
@@ -38,24 +38,28 @@ namespace FactoryWarehouseSystem
 
                 dt = item.getItemDetails();
                 dataGridView1.DataSource = dt;
-
+                int mark = 0;
                 foreach (DataRow dr in dt.Rows)
                 {
                     if (dr["itemCode"].ToString() == txtItemCode.Text)
                     {                        
                         MessageBox.Show("Item already Exists!");
+                        mark = 1;
                         break;
                     }
                     else
                     {
-                        item.addItem();
-                        txtItemCode.Clear();
-                        txtItemName.Clear();
-                        txtUnitPrice.Clear();
-                        txtQty.Clear();
-                        break;
+                        mark = 0;    
                     }
-                }                     
+                }
+                if (mark == 0)
+                {
+                    item.addItem();
+                    txtItemCode.Clear();
+                    txtItemName.Clear();
+                    txtUnitPrice.Clear();
+                    txtQty.Clear();
+                }
                 dt = item.getItemDetails();
                 dataGridView1.DataSource = dt;
             }

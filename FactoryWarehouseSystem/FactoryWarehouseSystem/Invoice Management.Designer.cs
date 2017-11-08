@@ -30,10 +30,10 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAddInvoice = new System.Windows.Forms.Button();
-            this.btnUpdateInvoice = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnRemoveInvoice = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -51,22 +51,13 @@
             // 
             // btnAddInvoice
             // 
-            this.btnAddInvoice.Location = new System.Drawing.Point(414, 291);
+            this.btnAddInvoice.Location = new System.Drawing.Point(333, 291);
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(75, 23);
             this.btnAddInvoice.TabIndex = 1;
             this.btnAddInvoice.Text = "Add New";
             this.btnAddInvoice.UseVisualStyleBackColor = true;
             this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
-            // 
-            // btnUpdateInvoice
-            // 
-            this.btnUpdateInvoice.Location = new System.Drawing.Point(655, 291);
-            this.btnUpdateInvoice.Name = "btnUpdateInvoice";
-            this.btnUpdateInvoice.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateInvoice.TabIndex = 3;
-            this.btnUpdateInvoice.Text = "Update";
-            this.btnUpdateInvoice.UseVisualStyleBackColor = true;
             // 
             // btnView
             // 
@@ -99,14 +90,24 @@
             this.btnRemoveInvoice.UseVisualStyleBackColor = true;
             this.btnRemoveInvoice.Click += new System.EventHandler(this.btnRemoveInvoice_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(414, 291);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Invoice_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 352);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnView);
-            this.Controls.Add(this.btnUpdateInvoice);
             this.Controls.Add(this.btnRemoveInvoice);
             this.Controls.Add(this.btnAddInvoice);
             this.Controls.Add(this.dataGridView1);
@@ -123,9 +124,9 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAddInvoice;
-        private System.Windows.Forms.Button btnUpdateInvoice;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnRemoveInvoice;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

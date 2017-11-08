@@ -115,9 +115,10 @@ namespace FactoryWarehouseSystem
             else
             {
                 Invoice invoice = new Invoice();
+                invoice.Id = Convert.ToInt32(txtInvID.Text);
                 invoice.CusName = txtCusName.Text;                
                 invoice.addInvoice();
-                this.Close();
+                this.Close();               
             }
         }
 

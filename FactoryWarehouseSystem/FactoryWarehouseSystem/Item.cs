@@ -55,7 +55,16 @@ namespace FactoryWarehouseSystem
         public void addItem()
         {
             Database db = new Database();
-            string query = "insert into item (itemCode, itemName, unitPrice, qty) values ('"+itemCode+"','"+itemName+"',"+unitPrice+", "+itemQty+")";
+            string id = db.getValue("select max(itemID) from item");
+            if (string.IsNullOrEmpty(id))
+            {
+                id = "1";
+            }
+            else
+            {
+                id = (Convert.ToInt32(id) + 1).ToString();
+            }
+            string query = "insert into item values (" + id + ",'" + itemCode + "','" + itemName + "'," + unitPrice + ", " + itemQty + ")";
             db.inserUpdateDelete(query);
         }
 

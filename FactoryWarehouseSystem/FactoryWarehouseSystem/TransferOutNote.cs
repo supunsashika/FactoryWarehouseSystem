@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 namespace FactoryWarehouseSystem
 {
     class TransferOutNote
-    {
-        private int TONID;
+    {        
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         private int date;
         private string itemType;
 
@@ -38,7 +44,7 @@ namespace FactoryWarehouseSystem
         public void addTON()
         {
             Database db = new Database();
-            string queryTON = "insert into TON (date, fromLocation, destination) values ('"+DateTime.Now.ToString()+"', '"+fromLocation+"','"+destination+"')";
+            string queryTON = "insert into TON values ("+Id+",'"+DateTime.Now.ToString()+"', '"+fromLocation+"','"+destination+"','0')";
             db.inserUpdateDelete(queryTON);
             addTONDetail();
         }

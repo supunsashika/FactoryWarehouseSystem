@@ -97,6 +97,7 @@ namespace FactoryWarehouseSystem
             TransferOutNote ton = new TransferOutNote();
             ton.FromLocation = txtFromLocation.Text;
             ton.Destination = cmbDestination.Text;
+            ton.Id = Convert.ToInt32(txtTONNo.Text);
             ton.addTON();           
             MessageBox.Show("TON added successfully!");
             this.Close();
