@@ -56,7 +56,7 @@ namespace FactoryWarehouseSystem
                 }
                 else
                 {
-                    string query = "insert into invTemp values (" + txtInvID.Text + "," + cmbItemID.Text + "," + txtQty.Text + ")";
+                    string query = "insert into invTemp values (" + txtInvID.Text + "," + cmbItemID.Text + "," + txtQty.Text + ",0)";
                     db.inserUpdateDelete(query);
                 }
                 dt = db.select("select * from invTemp");
@@ -125,6 +125,11 @@ namespace FactoryWarehouseSystem
         private void btnCancal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbItemID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

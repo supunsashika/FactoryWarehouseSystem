@@ -57,7 +57,7 @@ namespace FactoryWarehouseSystem
         public void addInvoice()
         {
             Database db = new Database();
-            string query = "insert into invoice values ("+id+",'" + DateTime.Now.ToString() + "','" + cusName + "') ";
+            string query = "insert into invoice values (" + id + ",'" + DateTime.Now.ToString() + "','" + cusName + "',0) ";
             db.inserUpdateDelete(query);
             addInvDetails();
             MessageBox.Show("Invoice Added!");
@@ -65,7 +65,8 @@ namespace FactoryWarehouseSystem
         public void addInvDetails()
         {
             Database db = new Database();
-            db.inserUpdateDelete("insert into invoiceDetails select invID, itemID, qty from invTemp");
+            db.inserUpdateDelete("insert into invoiceDetails select invID, itemID, qty,IsIssued from invTemp");
+          
         }
         public void remove(int id)
         {

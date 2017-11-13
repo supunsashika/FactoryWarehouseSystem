@@ -35,15 +35,15 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtCusName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbItemID = new System.Windows.Forms.ComboBox();
-            this.cmbItemCode = new System.Windows.Forms.ComboBox();
-            this.txtQty = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.cmbItemCode = new System.Windows.Forms.ComboBox();
+            this.cmbItemID = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCancal = new System.Windows.Forms.Button();
             this.btnIssueInv = new System.Windows.Forms.Button();
@@ -118,65 +118,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Items";
             // 
-            // cmbItemID
+            // btnRemove
             // 
-            this.cmbItemID.FormattingEnabled = true;
-            this.cmbItemID.Location = new System.Drawing.Point(96, 24);
-            this.cmbItemID.Name = "cmbItemID";
-            this.cmbItemID.Size = new System.Drawing.Size(157, 21);
-            this.cmbItemID.TabIndex = 0;
-            // 
-            // cmbItemCode
-            // 
-            this.cmbItemCode.FormattingEnabled = true;
-            this.cmbItemCode.Location = new System.Drawing.Point(96, 51);
-            this.cmbItemCode.Name = "cmbItemCode";
-            this.cmbItemCode.Size = new System.Drawing.Size(157, 21);
-            this.cmbItemCode.TabIndex = 1;
-            // 
-            // txtQty
-            // 
-            this.txtQty.Location = new System.Drawing.Point(96, 78);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(157, 20);
-            this.txtQty.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Item ID";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Item Code";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 81);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Quantity";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(291, 19);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 6;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnRemove.Location = new System.Drawing.Point(291, 76);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 8;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -188,15 +138,66 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnRemove
+            // btnClear
             // 
-            this.btnRemove.Location = new System.Drawing.Point(291, 76);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 8;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.btnClear.Location = new System.Drawing.Point(291, 19);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Quantity";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 54);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Item Code";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Item ID";
+            // 
+            // txtQty
+            // 
+            this.txtQty.Location = new System.Drawing.Point(96, 78);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(157, 20);
+            this.txtQty.TabIndex = 2;
+            // 
+            // cmbItemCode
+            // 
+            this.cmbItemCode.FormattingEnabled = true;
+            this.cmbItemCode.Location = new System.Drawing.Point(96, 51);
+            this.cmbItemCode.Name = "cmbItemCode";
+            this.cmbItemCode.Size = new System.Drawing.Size(157, 21);
+            this.cmbItemCode.TabIndex = 1;
+            // 
+            // cmbItemID
+            // 
+            this.cmbItemID.FormattingEnabled = true;
+            this.cmbItemID.Location = new System.Drawing.Point(96, 24);
+            this.cmbItemID.Name = "cmbItemID";
+            this.cmbItemID.Size = new System.Drawing.Size(157, 21);
+            this.cmbItemID.TabIndex = 0;
+            this.cmbItemID.SelectedIndexChanged += new System.EventHandler(this.cmbItemID_SelectedIndexChanged);
             // 
             // dataGridView1
             // 

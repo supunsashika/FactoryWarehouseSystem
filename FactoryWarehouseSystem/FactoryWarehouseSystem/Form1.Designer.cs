@@ -31,8 +31,8 @@
             this.btnIssueTON = new System.Windows.Forms.Button();
             this.btnAddNewItem = new System.Windows.Forms.Button();
             this.btnAddInvoice = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnAddGRN = new System.Windows.Forms.Button();
+            this.btnSuppliers = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -68,23 +68,25 @@
             this.btnAddInvoice.UseVisualStyleBackColor = true;
             this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
-            // button4
+            // btnAddGRN
             // 
-            this.button4.Location = new System.Drawing.Point(497, 94);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 70);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAddGRN.Location = new System.Drawing.Point(497, 94);
+            this.btnAddGRN.Name = "btnAddGRN";
+            this.btnAddGRN.Size = new System.Drawing.Size(132, 70);
+            this.btnAddGRN.TabIndex = 3;
+            this.btnAddGRN.Text = "Issue Goods to Warehouse";
+            this.btnAddGRN.UseVisualStyleBackColor = true;
+            this.btnAddGRN.Click += new System.EventHandler(this.btnAddGRN_Click);
             // 
-            // button5
+            // btnSuppliers
             // 
-            this.button5.Location = new System.Drawing.Point(83, 170);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(132, 70);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSuppliers.Location = new System.Drawing.Point(83, 170);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(132, 70);
+            this.btnSuppliers.TabIndex = 4;
+            this.btnSuppliers.Text = "Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = true;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // button6
             // 
@@ -121,8 +123,8 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnSuppliers);
+            this.Controls.Add(this.btnAddGRN);
             this.Controls.Add(this.btnAddInvoice);
             this.Controls.Add(this.btnAddNewItem);
             this.Controls.Add(this.btnIssueTON);
@@ -138,8 +140,8 @@
         private System.Windows.Forms.Button btnIssueTON;
         private System.Windows.Forms.Button btnAddNewItem;
         private System.Windows.Forms.Button btnAddInvoice;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnAddGRN;
+        private System.Windows.Forms.Button btnSuppliers;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;

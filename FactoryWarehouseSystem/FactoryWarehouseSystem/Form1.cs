@@ -40,5 +40,18 @@ namespace FactoryWarehouseSystem
         {
            
         }
+
+        private void btnAddGRN_Click(object sender, EventArgs e)
+        {
+            Purchased_Goods purchased_Goods = new Purchased_Goods();
+            purchased_Goods.ShowDialog();
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers();
+            suppliers.ShowDialog();
+           
+        }
     }
 }
