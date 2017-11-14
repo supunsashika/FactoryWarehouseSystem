@@ -40,15 +40,15 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(434, 178);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(599, 366);
+            this.btnAddNew.Location = new System.Drawing.Point(370, 196);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(75, 23);
             this.btnAddNew.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(518, 366);
+            this.btnRefresh.Location = new System.Drawing.Point(289, 196);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(437, 366);
+            this.btnDelete.Location = new System.Drawing.Point(208, 196);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 478);
+            this.ClientSize = new System.Drawing.Size(454, 227);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddNew);

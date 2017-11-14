@@ -46,12 +46,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(723, 128);
+            this.dataGridView1.Size = new System.Drawing.Size(496, 128);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnAddInvoice
             // 
-            this.btnAddInvoice.Location = new System.Drawing.Point(333, 291);
+            this.btnAddInvoice.Location = new System.Drawing.Point(192, 257);
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(75, 23);
             this.btnAddInvoice.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(495, 291);
+            this.btnView.Location = new System.Drawing.Point(354, 257);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(75, 23);
             this.btnView.TabIndex = 4;
@@ -77,12 +77,12 @@
             this.dataGridView2.Location = new System.Drawing.Point(12, 146);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(723, 105);
+            this.dataGridView2.Size = new System.Drawing.Size(496, 105);
             this.dataGridView2.TabIndex = 5;
             // 
             // btnRemoveInvoice
             // 
-            this.btnRemoveInvoice.Location = new System.Drawing.Point(574, 291);
+            this.btnRemoveInvoice.Location = new System.Drawing.Point(433, 257);
             this.btnRemoveInvoice.Name = "btnRemoveInvoice";
             this.btnRemoveInvoice.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveInvoice.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(414, 291);
+            this.btnRefresh.Location = new System.Drawing.Point(273, 257);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 352);
+            this.ClientSize = new System.Drawing.Size(515, 285);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnView);

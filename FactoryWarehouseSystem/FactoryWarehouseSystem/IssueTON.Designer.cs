@@ -133,7 +133,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 263);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 150);
             this.dataGridView1.TabIndex = 8;
             // 
             // groupBox1
@@ -151,7 +151,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(15, 120);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(589, 137);
+            this.groupBox1.Size = new System.Drawing.Size(539, 137);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Items";
@@ -257,7 +257,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(67, 446);
+            this.btnBack.Location = new System.Drawing.Point(311, 419);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 10;
@@ -267,7 +267,7 @@
             // 
             // btnIssue
             // 
-            this.btnIssue.Location = new System.Drawing.Point(150, 446);
+            this.btnIssue.Location = new System.Drawing.Point(394, 419);
             this.btnIssue.Name = "btnIssue";
             this.btnIssue.Size = new System.Drawing.Size(160, 23);
             this.btnIssue.TabIndex = 11;
@@ -279,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 504);
+            this.ClientSize = new System.Drawing.Size(564, 453);
             this.Controls.Add(this.btnIssue);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBox1);

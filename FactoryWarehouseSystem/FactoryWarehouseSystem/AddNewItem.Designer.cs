@@ -45,7 +45,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 40);
+            this.label1.Location = new System.Drawing.Point(24, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 66);
+            this.label2.Location = new System.Drawing.Point(24, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 1;
@@ -62,21 +62,21 @@
             // 
             // txtItemCode
             // 
-            this.txtItemCode.Location = new System.Drawing.Point(115, 37);
+            this.txtItemCode.Location = new System.Drawing.Point(114, 6);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(295, 20);
             this.txtItemCode.TabIndex = 2;
             // 
             // txtItemName
             // 
-            this.txtItemName.Location = new System.Drawing.Point(115, 63);
+            this.txtItemName.Location = new System.Drawing.Point(114, 32);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(295, 20);
             this.txtItemName.TabIndex = 3;
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(211, 141);
+            this.btnAddItem.Location = new System.Drawing.Point(332, 110);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(75, 23);
             this.btnAddItem.TabIndex = 4;
@@ -89,15 +89,15 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 176);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 145);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(468, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(398, 150);
             this.dataGridView1.TabIndex = 5;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(168, 332);
+            this.btnDelete.Location = new System.Drawing.Point(241, 301);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(166, 23);
             this.btnDelete.TabIndex = 6;
@@ -108,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 92);
+            this.label3.Location = new System.Drawing.Point(24, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 7;
@@ -117,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 118);
+            this.label4.Location = new System.Drawing.Point(24, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 8;
@@ -125,14 +125,14 @@
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(115, 89);
+            this.txtUnitPrice.Location = new System.Drawing.Point(114, 58);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(295, 20);
             this.txtUnitPrice.TabIndex = 9;
             // 
             // txtQty
             // 
-            this.txtQty.Location = new System.Drawing.Point(115, 115);
+            this.txtQty.Location = new System.Drawing.Point(114, 84);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(295, 20);
             this.txtQty.TabIndex = 10;
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 401);
+            this.ClientSize = new System.Drawing.Size(420, 332);
             this.Controls.Add(this.txtQty);
             this.Controls.Add(this.txtUnitPrice);
             this.Controls.Add(this.label4);

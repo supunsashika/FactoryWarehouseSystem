@@ -33,14 +33,11 @@
             this.btnAddInvoice = new System.Windows.Forms.Button();
             this.btnAddGRN = new System.Windows.Forms.Button();
             this.btnSuppliers = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnIssueTON
             // 
-            this.btnIssueTON.Location = new System.Drawing.Point(83, 94);
+            this.btnIssueTON.Location = new System.Drawing.Point(12, 12);
             this.btnIssueTON.Name = "btnIssueTON";
             this.btnIssueTON.Size = new System.Drawing.Size(132, 70);
             this.btnIssueTON.TabIndex = 0;
@@ -50,7 +47,7 @@
             // 
             // btnAddNewItem
             // 
-            this.btnAddNewItem.Location = new System.Drawing.Point(221, 94);
+            this.btnAddNewItem.Location = new System.Drawing.Point(150, 12);
             this.btnAddNewItem.Name = "btnAddNewItem";
             this.btnAddNewItem.Size = new System.Drawing.Size(132, 70);
             this.btnAddNewItem.TabIndex = 1;
@@ -60,7 +57,7 @@
             // 
             // btnAddInvoice
             // 
-            this.btnAddInvoice.Location = new System.Drawing.Point(359, 94);
+            this.btnAddInvoice.Location = new System.Drawing.Point(288, 12);
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(132, 70);
             this.btnAddInvoice.TabIndex = 2;
@@ -70,7 +67,7 @@
             // 
             // btnAddGRN
             // 
-            this.btnAddGRN.Location = new System.Drawing.Point(497, 94);
+            this.btnAddGRN.Location = new System.Drawing.Point(426, 12);
             this.btnAddGRN.Name = "btnAddGRN";
             this.btnAddGRN.Size = new System.Drawing.Size(132, 70);
             this.btnAddGRN.TabIndex = 3;
@@ -80,7 +77,7 @@
             // 
             // btnSuppliers
             // 
-            this.btnSuppliers.Location = new System.Drawing.Point(83, 170);
+            this.btnSuppliers.Location = new System.Drawing.Point(12, 88);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Size = new System.Drawing.Size(132, 70);
             this.btnSuppliers.TabIndex = 4;
@@ -88,41 +85,11 @@
             this.btnSuppliers.UseVisualStyleBackColor = true;
             this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(221, 170);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(132, 70);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(359, 170);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(132, 70);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(497, 170);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(132, 70);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 501);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(567, 163);
             this.Controls.Add(this.btnSuppliers);
             this.Controls.Add(this.btnAddGRN);
             this.Controls.Add(this.btnAddInvoice);
@@ -142,9 +109,6 @@
         private System.Windows.Forms.Button btnAddInvoice;
         private System.Windows.Forms.Button btnAddGRN;
         private System.Windows.Forms.Button btnSuppliers;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
     }
 }
 

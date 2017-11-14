@@ -89,7 +89,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(282, 107);
+            this.btnAdd.Location = new System.Drawing.Point(282, 94);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 6;
@@ -99,7 +99,7 @@
             // 
             // btnCancal
             // 
-            this.btnCancal.Location = new System.Drawing.Point(201, 107);
+            this.btnCancal.Location = new System.Drawing.Point(201, 94);
             this.btnCancal.Name = "btnCancal";
             this.btnCancal.Size = new System.Drawing.Size(75, 23);
             this.btnCancal.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 147);
+            this.ClientSize = new System.Drawing.Size(365, 129);
             this.Controls.Add(this.btnCancal);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtLocation);

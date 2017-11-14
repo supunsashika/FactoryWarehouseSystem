@@ -212,7 +212,7 @@
             // 
             // btnCancal
             // 
-            this.btnCancal.Location = new System.Drawing.Point(250, 416);
+            this.btnCancal.Location = new System.Drawing.Point(258, 403);
             this.btnCancal.Name = "btnCancal";
             this.btnCancal.Size = new System.Drawing.Size(75, 23);
             this.btnCancal.TabIndex = 8;
@@ -222,7 +222,7 @@
             // 
             // btnIssueInv
             // 
-            this.btnIssueInv.Location = new System.Drawing.Point(331, 416);
+            this.btnIssueInv.Location = new System.Drawing.Point(339, 403);
             this.btnIssueInv.Name = "btnIssueInv";
             this.btnIssueInv.Size = new System.Drawing.Size(87, 23);
             this.btnIssueInv.TabIndex = 9;
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 470);
+            this.ClientSize = new System.Drawing.Size(447, 437);
             this.Controls.Add(this.btnIssueInv);
             this.Controls.Add(this.btnCancal);
             this.Controls.Add(this.dataGridView1);
