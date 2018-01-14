@@ -39,6 +39,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.txtQty = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtRFID = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +79,7 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(332, 110);
+            this.btnAddItem.Location = new System.Drawing.Point(332, 147);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(75, 23);
             this.btnAddItem.TabIndex = 4;
@@ -89,7 +92,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 145);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 182);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(398, 150);
@@ -97,7 +100,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(241, 301);
+            this.btnDelete.Location = new System.Drawing.Point(241, 338);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(166, 23);
             this.btnDelete.TabIndex = 6;
@@ -137,11 +140,41 @@
             this.txtQty.Size = new System.Drawing.Size(295, 20);
             this.txtQty.TabIndex = 10;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "RFID";
+            // 
+            // txtRFID
+            // 
+            this.txtRFID.Location = new System.Drawing.Point(114, 110);
+            this.txtRFID.Name = "txtRFID";
+            this.txtRFID.Size = new System.Drawing.Size(227, 20);
+            this.txtRFID.TabIndex = 12;
+            this.txtRFID.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtRFID_MouseClick);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(347, 108);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(60, 23);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.Text = "Get RFID";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // AddNewItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 332);
+            this.ClientSize = new System.Drawing.Size(420, 385);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.txtRFID);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtQty);
             this.Controls.Add(this.txtUnitPrice);
             this.Controls.Add(this.label4);
@@ -175,5 +208,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtRFID;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

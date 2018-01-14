@@ -45,7 +45,7 @@ namespace FactoryWarehouseSystem
         {
             Database db = new Database();
             DataTable dt = new DataTable();
-            dt = db.select("select * from Supplier");
+            dt = db.select("select supId as ID, supName as Supplier, location as Location from Supplier");
             return dt;
         }
         public DataTable getSupplier(string supName)

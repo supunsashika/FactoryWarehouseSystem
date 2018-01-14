@@ -19,16 +19,13 @@ namespace FactoryWarehouseSystem
 
         private void Purchased_Goods_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet4.Supplier' table. You can move, or remove it, as needed.
-            this.supplierTableAdapter1.Fill(this.lankaTiles2DataSet4.Supplier);
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet3.item' table. You can move, or remove it, as needed.
-            this.itemTableAdapter1.Fill(this.lankaTiles2DataSet3.item);
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet2.item' table. You can move, or remove it, as needed.
-            this.itemTableAdapter.Fill(this.lankaTiles2DataSet2.item);
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet1.Warehouses' table. You can move, or remove it, as needed.
-            this.warehousesTableAdapter.Fill(this.lankaTiles2DataSet1.Warehouses);
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet.Supplier' table. You can move, or remove it, as needed.
-            this.supplierTableAdapter.Fill(this.lankaTiles2DataSet.Supplier);
+            // TODO: This line of code loads data into the 'lankaTiles2DataSet5.item' table. You can move, or remove it, as needed.
+            this.itemTableAdapter.Fill(this.lankaTiles2DataSet5.item);
+            // TODO: This line of code loads data into the 'lankaTiles2DataSet5.Warehouses' table. You can move, or remove it, as needed.
+            this.warehousesTableAdapter.Fill(this.lankaTiles2DataSet5.Warehouses);
+            // TODO: This line of code loads data into the 'lankaTiles2DataSet5.Supplier' table. You can move, or remove it, as needed.
+            this.supplierTableAdapter.Fill(this.lankaTiles2DataSet5.Supplier);
+
             txtDate.Text = DateTime.Now.ToString();
             GoodRecieveNote grn = new GoodRecieveNote();
             grn.deleteTemp();

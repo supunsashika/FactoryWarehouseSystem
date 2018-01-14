@@ -10,8 +10,7 @@ namespace FactoryWarehouseSystem
     class Item
     {     
         private int itemID;
-        public int ItemID
-        {
+        public int ItemID        {
             get { return itemID; }
             set { itemID = value; }
         }
@@ -44,6 +43,13 @@ namespace FactoryWarehouseSystem
             set { unitPrice = value; }
         }
 
+        private string RFID;
+        public string rfid
+        {
+            get { return RFID; }
+            set { RFID = value; }
+        }
+
         public DataTable getItemDetails()
         {
             Database db = new Database();
@@ -64,7 +70,8 @@ namespace FactoryWarehouseSystem
             {
                 id = (Convert.ToInt32(id) + 1).ToString();
             }
-            string query = "insert into item values (" + id + ",'" + itemCode + "','" + itemName + "'," + unitPrice + ", " + itemQty + ")";
+            string query = "insert into item values (" + id + ",'" + itemCode + "',"
+                +"'" + itemName + "'," + unitPrice + ", " + itemQty + ",'" + RFID + "')";
             db.inserUpdateDelete(query);
         }
 
@@ -73,6 +80,14 @@ namespace FactoryWarehouseSystem
             Database db = new Database();
             string query = "delete from item where itemID = "+id+"";
             db.inserUpdateDelete(query);
+        }
+
+        public string getQty(string id)
+        {
+            string qty;
+            Database db = new Database();
+            qty = db.getValue("select qty from item where itemID = " + id + "");
+            return qty;
         }
         public void adjustMinimumStockBalance() { }
         public void viewStock() { }

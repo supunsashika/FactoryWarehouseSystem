@@ -35,6 +35,7 @@ namespace FactoryWarehouseSystem
                 item.ItemName = txtItemName.Text;
                 item.ItemQty = Convert.ToInt32(txtQty.Text);
                 item.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
+                item.rfid = txtRFID.Text;
 
                 dt = item.getItemDetails();
                 dataGridView1.DataSource = dt;
@@ -69,6 +70,7 @@ namespace FactoryWarehouseSystem
         {            
             DataTable dt = new DataTable();
             Item item = new Item();
+           
             dt = item.getItemDetails();
             dataGridView1.DataSource = dt;   
         }
@@ -85,6 +87,18 @@ namespace FactoryWarehouseSystem
                 dt = item.getItemDetails();
                 dataGridView1.DataSource = dt;
             }            
+        }
+
+        private void txtRFID_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RFID rfid = new RFID();
+            txtRFID.Clear();
+            txtRFID.Text = rfid.getRFID();
         }
     }
 }

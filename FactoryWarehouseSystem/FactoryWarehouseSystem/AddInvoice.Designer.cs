@@ -212,9 +212,9 @@
             // 
             // btnCancal
             // 
-            this.btnCancal.Location = new System.Drawing.Point(258, 403);
+            this.btnCancal.Location = new System.Drawing.Point(202, 403);
             this.btnCancal.Name = "btnCancal";
-            this.btnCancal.Size = new System.Drawing.Size(75, 23);
+            this.btnCancal.Size = new System.Drawing.Size(111, 43);
             this.btnCancal.TabIndex = 8;
             this.btnCancal.Text = "Cancal";
             this.btnCancal.UseVisualStyleBackColor = true;
@@ -222,9 +222,9 @@
             // 
             // btnIssueInv
             // 
-            this.btnIssueInv.Location = new System.Drawing.Point(339, 403);
+            this.btnIssueInv.Location = new System.Drawing.Point(319, 403);
             this.btnIssueInv.Name = "btnIssueInv";
-            this.btnIssueInv.Size = new System.Drawing.Size(87, 23);
+            this.btnIssueInv.Size = new System.Drawing.Size(110, 43);
             this.btnIssueInv.TabIndex = 9;
             this.btnIssueInv.Text = "Issue Invoice";
             this.btnIssueInv.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 437);
+            this.ClientSize = new System.Drawing.Size(447, 454);
             this.Controls.Add(this.btnIssueInv);
             this.Controls.Add(this.btnCancal);
             this.Controls.Add(this.dataGridView1);
@@ -245,8 +245,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MinimizeBox = false;
             this.Name = "AddInvoice";
-            this.Text = "AddInvoice";
+            this.Text = "Add Invoice";
             this.Load += new System.EventHandler(this.AddInvoice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

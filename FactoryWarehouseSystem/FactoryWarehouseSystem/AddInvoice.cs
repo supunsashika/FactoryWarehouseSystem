@@ -27,7 +27,7 @@ namespace FactoryWarehouseSystem
         {
             if (string.IsNullOrEmpty(txtQty.Text))
             {
-                MessageBox.Show("Quantuty cannot be empty!");
+                MessageBox.Show("Quantity cannot be empty!");
             }
             else if (!txtQty.Text.Any(char.IsDigit))
             {
@@ -35,32 +35,32 @@ namespace FactoryWarehouseSystem
             }
             else
             {
-                Database db = new Database();
-                dt = new DataTable();
-                dt = db.select("select * from invTemp");
-                int mark = 0;
-                foreach (DataRow row in dt.Rows)
-                {
-                    if (row.Field<int>(1) == Convert.ToInt32(cmbItemID.Text))
+                    Database db = new Database();                
+                    dt = new DataTable();
+                    dt = db.select("select itemid as [Item ID], qty as Quantity from invTemp");
+                    int mark = 0;
+                    foreach (DataRow row in dt.Rows)
                     {
-                        mark = 1;
-                        break;
+                        if (row.Field<int>(0) == Convert.ToInt32(cmbItemID.Text))
+                        {
+                            mark = 1;
+                            break;
+                        }
                     }
-                }
 
-                if (mark == 1)
-                {
-                    string updateQuery = "update invTemp set qty = qty+" + txtQty.Text + " where itemID = " + cmbItemID.Text + "";
-                    //MessageBox.Show(updateQuery);
-                    db.inserUpdateDelete(updateQuery);
-                }
-                else
-                {
-                    string query = "insert into invTemp values (" + txtInvID.Text + "," + cmbItemID.Text + "," + txtQty.Text + ",0)";
-                    db.inserUpdateDelete(query);
-                }
-                dt = db.select("select * from invTemp");
-                dataGridView1.DataSource = dt;
+                    if (mark == 1)
+                    {
+                        string updateQuery = "update invTemp set qty = qty+" + txtQty.Text + " where itemID = " + cmbItemID.Text + "";
+                        //MessageBox.Show(updateQuery);
+                        db.inserUpdateDelete(updateQuery);
+                    }
+                    else
+                    {
+                        string query = "insert into invTemp values (" + txtInvID.Text + "," + cmbItemID.Text + "," + txtQty.Text + ",0)";
+                        db.inserUpdateDelete(query);
+                    }
+                    dt = db.select("select itemid as [Item ID], qty as Quantity from invTemp");
+                    dataGridView1.DataSource = dt;
             }
         }
 
@@ -94,16 +94,19 @@ namespace FactoryWarehouseSystem
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int selectedTONId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
-            DialogResult dr = MessageBox.Show("Are you sure want to delete?", "Warning!", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
+            if (dataGridView1.CurrentRow!=null)
             {
-                Database db = new Database();
-                db.inserUpdateDelete("delete from invTemp where itemID = " + selectedTONId + "");
-                dt = new DataTable();
-                dt = db.select("select * from invTemp");
-                dataGridView1.DataSource = dt;
-            }
+                int selectedTONId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                DialogResult dr = MessageBox.Show("Are you sure want to delete?", "Warning!", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    Database db = new Database();
+                    db.inserUpdateDelete("delete from invTemp where itemID = " + selectedTONId + "");
+                    dt = new DataTable();
+                    dt = db.select("select * from invTemp");
+                    dataGridView1.DataSource = dt;
+                }
+            }            
         }
 
         private void btnIssueInv_Click(object sender, EventArgs e)
@@ -118,7 +121,9 @@ namespace FactoryWarehouseSystem
                 invoice.Id = Convert.ToInt32(txtInvID.Text);
                 invoice.CusName = txtCusName.Text;                
                 invoice.addInvoice();
-                this.Close();               
+                Invoice_Management frmInvoice = new Invoice_Management();
+                frmInvoice.LoadDataGrid();
+                this.Close();
             }
         }
 

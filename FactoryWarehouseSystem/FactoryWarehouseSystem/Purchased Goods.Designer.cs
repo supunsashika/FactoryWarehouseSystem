@@ -41,46 +41,34 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.cmbItemCode = new System.Windows.Forms.ComboBox();
+            this.itemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lankaTiles2DataSet5BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lankaTiles2DataSet5 = new FactoryWarehouseSystem.LankaTiles2DataSet5();
             this.cmbItemID = new System.Windows.Forms.ComboBox();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lankaTiles2DataSet = new FactoryWarehouseSystem.LankaTiles2DataSet();
-            this.supplierTableAdapter = new FactoryWarehouseSystem.LankaTiles2DataSetTableAdapters.SupplierTableAdapter();
             this.cmbDestination = new System.Windows.Forms.ComboBox();
             this.warehousesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lankaTiles2DataSet1 = new FactoryWarehouseSystem.LankaTiles2DataSet1();
-            this.warehousesTableAdapter = new FactoryWarehouseSystem.LankaTiles2DataSet1TableAdapters.WarehousesTableAdapter();
-            this.lankaTiles2DataSet2 = new FactoryWarehouseSystem.LankaTiles2DataSet2();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemTableAdapter = new FactoryWarehouseSystem.LankaTiles2DataSet2TableAdapters.itemTableAdapter();
-            this.itemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lankaTiles2DataSet3 = new FactoryWarehouseSystem.LankaTiles2DataSet3();
-            this.itemBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.itemTableAdapter1 = new FactoryWarehouseSystem.LankaTiles2DataSet3TableAdapters.itemTableAdapter();
             this.cmbSupName = new System.Windows.Forms.ComboBox();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.lankaTiles2DataSet4 = new FactoryWarehouseSystem.LankaTiles2DataSet4();
-            this.supplierBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.supplierTableAdapter1 = new FactoryWarehouseSystem.LankaTiles2DataSet4TableAdapters.SupplierTableAdapter();
             this.label8 = new System.Windows.Forms.Label();
             this.txtGRNID = new System.Windows.Forms.TextBox();
             this.txtSupID = new System.Windows.Forms.TextBox();
+            this.supplierTableAdapter = new FactoryWarehouseSystem.LankaTiles2DataSet5TableAdapters.SupplierTableAdapter();
+            this.warehousesTableAdapter = new FactoryWarehouseSystem.LankaTiles2DataSet5TableAdapters.WarehousesTableAdapter();
+            this.itemTableAdapter = new FactoryWarehouseSystem.LankaTiles2DataSet5TableAdapters.itemTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warehousesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet5BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warehousesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIssueInv
@@ -198,19 +186,45 @@
             // 
             // cmbItemCode
             // 
+            this.cmbItemCode.DataSource = this.itemBindingSource1;
+            this.cmbItemCode.DisplayMember = "itemCode";
             this.cmbItemCode.FormattingEnabled = true;
             this.cmbItemCode.Location = new System.Drawing.Point(96, 51);
             this.cmbItemCode.Name = "cmbItemCode";
             this.cmbItemCode.Size = new System.Drawing.Size(157, 21);
             this.cmbItemCode.TabIndex = 1;
+            this.cmbItemCode.ValueMember = "itemCode";
+            // 
+            // itemBindingSource1
+            // 
+            this.itemBindingSource1.DataMember = "item";
+            this.itemBindingSource1.DataSource = this.lankaTiles2DataSet5BindingSource;
+            // 
+            // lankaTiles2DataSet5BindingSource
+            // 
+            this.lankaTiles2DataSet5BindingSource.DataSource = this.lankaTiles2DataSet5;
+            this.lankaTiles2DataSet5BindingSource.Position = 0;
+            // 
+            // lankaTiles2DataSet5
+            // 
+            this.lankaTiles2DataSet5.DataSetName = "LankaTiles2DataSet5";
+            this.lankaTiles2DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbItemID
             // 
+            this.cmbItemID.DataSource = this.itemBindingSource;
+            this.cmbItemID.DisplayMember = "itemID";
             this.cmbItemID.FormattingEnabled = true;
             this.cmbItemID.Location = new System.Drawing.Point(96, 24);
             this.cmbItemID.Name = "cmbItemID";
             this.cmbItemID.Size = new System.Drawing.Size(157, 21);
             this.cmbItemID.TabIndex = 0;
+            this.cmbItemID.ValueMember = "itemID";
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataMember = "item";
+            this.itemBindingSource.DataSource = this.lankaTiles2DataSet5BindingSource;
             // 
             // label3
             // 
@@ -246,20 +260,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Supplier ID";
             // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataMember = "Supplier";
-            this.supplierBindingSource.DataSource = this.lankaTiles2DataSet;
-            // 
-            // lankaTiles2DataSet
-            // 
-            this.lankaTiles2DataSet.DataSetName = "LankaTiles2DataSet";
-            this.lankaTiles2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // supplierTableAdapter
-            // 
-            this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
             // cmbDestination
             // 
             this.cmbDestination.DataSource = this.warehousesBindingSource;
@@ -274,49 +274,7 @@
             // warehousesBindingSource
             // 
             this.warehousesBindingSource.DataMember = "Warehouses";
-            this.warehousesBindingSource.DataSource = this.lankaTiles2DataSet1;
-            // 
-            // lankaTiles2DataSet1
-            // 
-            this.lankaTiles2DataSet1.DataSetName = "LankaTiles2DataSet1";
-            this.lankaTiles2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // warehousesTableAdapter
-            // 
-            this.warehousesTableAdapter.ClearBeforeFill = true;
-            // 
-            // lankaTiles2DataSet2
-            // 
-            this.lankaTiles2DataSet2.DataSetName = "LankaTiles2DataSet2";
-            this.lankaTiles2DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataMember = "item";
-            this.itemBindingSource.DataSource = this.lankaTiles2DataSet2;
-            // 
-            // itemTableAdapter
-            // 
-            this.itemTableAdapter.ClearBeforeFill = true;
-            // 
-            // itemBindingSource1
-            // 
-            this.itemBindingSource1.DataMember = "item";
-            this.itemBindingSource1.DataSource = this.lankaTiles2DataSet2;
-            // 
-            // lankaTiles2DataSet3
-            // 
-            this.lankaTiles2DataSet3.DataSetName = "LankaTiles2DataSet3";
-            this.lankaTiles2DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // itemBindingSource2
-            // 
-            this.itemBindingSource2.DataMember = "item";
-            this.itemBindingSource2.DataSource = this.lankaTiles2DataSet3;
-            // 
-            // itemTableAdapter1
-            // 
-            this.itemTableAdapter1.ClearBeforeFill = true;
+            this.warehousesBindingSource.DataSource = this.lankaTiles2DataSet5BindingSource;
             // 
             // cmbSupName
             // 
@@ -330,6 +288,11 @@
             this.cmbSupName.ValueMember = "supName";
             this.cmbSupName.SelectedIndexChanged += new System.EventHandler(this.cmbSupName_SelectedIndexChanged);
             // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataMember = "Supplier";
+            this.supplierBindingSource.DataSource = this.lankaTiles2DataSet5;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -338,20 +301,6 @@
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 22;
             this.label7.Text = "Supplier Name";
-            // 
-            // lankaTiles2DataSet4
-            // 
-            this.lankaTiles2DataSet4.DataSetName = "LankaTiles2DataSet4";
-            this.lankaTiles2DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // supplierBindingSource1
-            // 
-            this.supplierBindingSource1.DataMember = "Supplier";
-            this.supplierBindingSource1.DataSource = this.lankaTiles2DataSet4;
-            // 
-            // supplierTableAdapter1
-            // 
-            this.supplierTableAdapter1.ClearBeforeFill = true;
             // 
             // label8
             // 
@@ -378,6 +327,18 @@
             this.txtSupID.Size = new System.Drawing.Size(318, 20);
             this.txtSupID.TabIndex = 26;
             // 
+            // supplierTableAdapter
+            // 
+            this.supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // warehousesTableAdapter
+            // 
+            this.warehousesTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemTableAdapter
+            // 
+            this.itemTableAdapter.ClearBeforeFill = true;
+            // 
             // Purchased_Goods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,22 +359,17 @@
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label1);
             this.Name = "Purchased_Goods";
-            this.Text = "Purchased_Goods";
+            this.Text = "Purchased Goods";
             this.Load += new System.EventHandler(this.Purchased_Goods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.warehousesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet5BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lankaTiles2DataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warehousesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,27 +394,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label1;
-        private LankaTiles2DataSet lankaTiles2DataSet;
-        private System.Windows.Forms.BindingSource supplierBindingSource;
-        private LankaTiles2DataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
         private System.Windows.Forms.ComboBox cmbDestination;
-        private LankaTiles2DataSet1 lankaTiles2DataSet1;
-        private System.Windows.Forms.BindingSource warehousesBindingSource;
-        private LankaTiles2DataSet1TableAdapters.WarehousesTableAdapter warehousesTableAdapter;
-        private LankaTiles2DataSet2 lankaTiles2DataSet2;
-        private System.Windows.Forms.BindingSource itemBindingSource;
-        private LankaTiles2DataSet2TableAdapters.itemTableAdapter itemTableAdapter;
-        private System.Windows.Forms.BindingSource itemBindingSource1;
-        private LankaTiles2DataSet3 lankaTiles2DataSet3;
-        private System.Windows.Forms.BindingSource itemBindingSource2;
-        private LankaTiles2DataSet3TableAdapters.itemTableAdapter itemTableAdapter1;
         private System.Windows.Forms.ComboBox cmbSupName;
         private System.Windows.Forms.Label label7;
-        private LankaTiles2DataSet4 lankaTiles2DataSet4;
-        private System.Windows.Forms.BindingSource supplierBindingSource1;
-        private LankaTiles2DataSet4TableAdapters.SupplierTableAdapter supplierTableAdapter1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtGRNID;
         private System.Windows.Forms.TextBox txtSupID;
+        private LankaTiles2DataSet5 lankaTiles2DataSet5;
+        private System.Windows.Forms.BindingSource supplierBindingSource;
+        private LankaTiles2DataSet5TableAdapters.SupplierTableAdapter supplierTableAdapter;
+        private System.Windows.Forms.BindingSource lankaTiles2DataSet5BindingSource;
+        private System.Windows.Forms.BindingSource warehousesBindingSource;
+        private LankaTiles2DataSet5TableAdapters.WarehousesTableAdapter warehousesTableAdapter;
+        private System.Windows.Forms.BindingSource itemBindingSource;
+        private LankaTiles2DataSet5TableAdapters.itemTableAdapter itemTableAdapter;
+        private System.Windows.Forms.BindingSource itemBindingSource1;
     }
 }

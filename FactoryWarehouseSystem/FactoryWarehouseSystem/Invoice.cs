@@ -10,6 +10,8 @@ namespace FactoryWarehouseSystem
 {
     class Invoice
     {
+        Database db;
+        DataTable dt;
         private int id;
         public int Id
         {
@@ -34,29 +36,31 @@ namespace FactoryWarehouseSystem
 
         public DataTable getInvoice()
         {
-            Database db = new Database();
-            DataTable dt = new DataTable();
-            dt = db.select("select * from invoice");
+            db = new Database();
+            dt = new DataTable();
+            dt = db.select("select invId as ID, date as Date, cusName as Customer from invoice");
             return dt;
         }
         public DataTable getInvoice(int id)
         {
-            Database db = new Database();
-            DataTable dt = new DataTable();
-            dt = db.select("select * from invoiceDetails where invID = " + id + "");
+            db = new Database();
+            dt = new DataTable();
+            dt = db.select("SELECT item.itemName AS Item, invoiceDetails.qty AS Quantity, " +
+                "invoiceDetails.IsIssued AS [Issue Status] FROM item INNER JOIN invoiceDetails " +
+                "ON item.itemID = invoiceDetails.itemID WHERE(invoiceDetails.invID = " + id + ")");
             return dt;
         }
 
         public string getMaxID()
         {
-            Database db = new Database();
+            db = new Database();
             string val;
             val = db.getValue("select max(invID) from invoice");
             return val;
         }
         public void addInvoice()
         {
-            Database db = new Database();
+            db = new Database();
             string query = "insert into invoice values (" + id + ",'" + DateTime.Now.ToString() + "','" + cusName + "',0) ";
             db.inserUpdateDelete(query);
             addInvDetails();
@@ -64,15 +68,23 @@ namespace FactoryWarehouseSystem
         }
         public void addInvDetails()
         {
-            Database db = new Database();
+            db = new Database();
             db.inserUpdateDelete("insert into invoiceDetails select invID, itemID, qty,IsIssued from invTemp");
           
         }
         public void remove(int id)
         {
-            Database db = new Database();
-            db.inserUpdateDelete("delete from invoice where invID = "+id+"");
+            db = new Database();            
             db.inserUpdateDelete("delete from invoiceDetails where invID = " + id + "");
+            db.inserUpdateDelete("delete from invoice where invID = " + id + "");
         }
+
+        public DataTable search(string searchString)
+        {
+            db = new Database();
+            dt = new DataTable();
+            dt = db.select("select invId as ID, date as Date, cusName as Customer from invoice where cusName like '%" + searchString + "%' ");
+            return dt;
+        } 
     }
 }
