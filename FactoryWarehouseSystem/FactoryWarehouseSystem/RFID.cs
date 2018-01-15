@@ -39,11 +39,9 @@ namespace FactoryWarehouseSystem
             SerialPort sp = (SerialPort)sender;
             result = sp.ReadExisting().ToString();
 
-            DialogResult dr = MessageBox.Show("Do you want to add this RFID ?      " + result + " ", "Confirm!", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
-                value = result;
-            }                       
+            DialogResult dr = MessageBox.Show("Do you want to add this RFID ?\n" + result + " ", "Confirm!", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)            
+                value = result;                                  
         }
         delegate void SetTextCallback(string text);             
      }    

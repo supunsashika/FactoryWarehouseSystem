@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace FactoryWarehouseSystem
 {
     class Item
-    {     
+    {
+        Database db;
+        DataTable dt;
         private int itemID;
         public int ItemID        {
             get { return itemID; }
@@ -52,15 +54,23 @@ namespace FactoryWarehouseSystem
 
         public DataTable getItemDetails()
         {
-            Database db = new Database();
-            DataTable dt = new DataTable();
-            dt = db.select("select * from item");
+            db = new Database();
+            dt = new DataTable();
+            dt = db.select("select itemId as ID, itemCode as Code, itemName as Name, unitPrice as Price, qty as Quantity, RFID from item");
+            return dt;
+        }
+
+        public DataTable getItemDetails(string id)
+        {
+            db = new Database();
+            dt = new DataTable();
+            dt = db.select("select itemId as ID, itemCode as Code, itemName as Name, unitPrice as Price, qty as Quantity, RFID from item where itemId = " + id + "");
             return dt;
         }
 
         public void addItem()
         {
-            Database db = new Database();
+            db = new Database();
             string id = db.getValue("select max(itemID) from item");
             if (string.IsNullOrEmpty(id))
             {
@@ -77,17 +87,25 @@ namespace FactoryWarehouseSystem
 
         public void deleteItem(int id)
         {
-            Database db = new Database();
-            string query = "delete from item where itemID = "+id+"";
+            db = new Database();
+            string query = "delete from item where itemID = " + id + "";
             db.inserUpdateDelete(query);
         }
 
         public string getQty(string id)
         {
             string qty;
-            Database db = new Database();
+            db = new Database();
             qty = db.getValue("select qty from item where itemID = " + id + "");
             return qty;
+        }
+
+        public DataTable search(string searchString)
+        {
+            dt = new DataTable();
+            db = new Database();
+            dt = db.select("select itemId as ID, itemCode as Code, itemName as Name, unitPrice as Price, qty as Quantity, RFID from item where itemCode LIKE '%" + searchString + "%'");
+            return dt;
         }
         public void adjustMinimumStockBalance() { }
         public void viewStock() { }

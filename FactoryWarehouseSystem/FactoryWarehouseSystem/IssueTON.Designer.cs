@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueTON));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTONNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +39,12 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtItemName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.txtQty = new System.Windows.Forms.TextBox();
-            this.cmbItemName = new System.Windows.Forms.ComboBox();
             this.cmbItemCode = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             // 
             // txtTONNo
             // 
+            this.txtTONNo.Enabled = false;
             this.txtTONNo.Location = new System.Drawing.Point(78, 28);
             this.txtTONNo.Name = "txtTONNo";
             this.txtTONNo.Size = new System.Drawing.Size(191, 20);
@@ -133,17 +135,19 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 263);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(542, 150);
             this.dataGridView1.TabIndex = 8;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtItemName);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnAddItem);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.txtUnitPrice);
             this.groupBox1.Controls.Add(this.txtQty);
-            this.groupBox1.Controls.Add(this.cmbItemName);
             this.groupBox1.Controls.Add(this.cmbItemCode);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -155,7 +159,14 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Items";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtItemName
+            // 
+            this.txtItemName.Enabled = false;
+            this.txtItemName.Location = new System.Drawing.Point(67, 54);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.Size = new System.Drawing.Size(191, 20);
+            this.txtItemName.TabIndex = 16;
             // 
             // btnDelete
             // 
@@ -201,14 +212,6 @@
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(191, 20);
             this.txtQty.TabIndex = 10;
-            // 
-            // cmbItemName
-            // 
-            this.cmbItemName.FormattingEnabled = true;
-            this.cmbItemName.Location = new System.Drawing.Point(67, 54);
-            this.cmbItemName.Name = "cmbItemName";
-            this.cmbItemName.Size = new System.Drawing.Size(191, 21);
-            this.cmbItemName.TabIndex = 11;
             // 
             // cmbItemCode
             // 
@@ -292,6 +295,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTONNo);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IssueTON";
             this.Text = "Issue TON";
             this.Load += new System.EventHandler(this.IssueTON_Load);
@@ -317,7 +323,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtQty;
-        private System.Windows.Forms.ComboBox cmbItemName;
         private System.Windows.Forms.ComboBox cmbItemCode;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -328,5 +333,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnIssue;
+        private System.Windows.Forms.TextBox txtItemName;
     }
 }

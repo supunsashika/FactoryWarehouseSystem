@@ -11,7 +11,11 @@ namespace FactoryWarehouseSystem
 {
     public partial class Purchased_Goods : Form
     {
-        public DataTable dt;
+        DataTable dt,dt2,dt3;
+        GoodRecieveNote grn;
+        Database db;
+        Item item;
+        Supplier supplier;
         public Purchased_Goods()
         {
             InitializeComponent();
@@ -19,40 +23,47 @@ namespace FactoryWarehouseSystem
 
         private void Purchased_Goods_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet5.item' table. You can move, or remove it, as needed.
-            this.itemTableAdapter.Fill(this.lankaTiles2DataSet5.item);
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet5.Warehouses' table. You can move, or remove it, as needed.
-            this.warehousesTableAdapter.Fill(this.lankaTiles2DataSet5.Warehouses);
-            // TODO: This line of code loads data into the 'lankaTiles2DataSet5.Supplier' table. You can move, or remove it, as needed.
-            this.supplierTableAdapter.Fill(this.lankaTiles2DataSet5.Supplier);
-
             txtDate.Text = DateTime.Now.ToString();
-            GoodRecieveNote grn = new GoodRecieveNote();
+            grn = new GoodRecieveNote();
             grn.deleteTemp();
             string id =  grn.getMaxID();
-            if (string.IsNullOrEmpty(id))
-            {
-                txtGRNID.Text = "1";
-            }
-            else
-            {
-                txtGRNID.Text = (Convert.ToInt16(id) + 1).ToString();
-            }
 
-            Item item = new Item();
+            if (string.IsNullOrEmpty(id))            
+                txtGRNID.Text = "1";            
+            else            
+                txtGRNID.Text = (Convert.ToInt16(id) + 1).ToString();
+            
+
+            item = new Item();
             dt = new DataTable();
             dt = item.getItemDetails();
+            
+            cmbItemID.ValueMember = "ID";
+            cmbItemID.DisplayMember = "ID";
             cmbItemID.DataSource = dt;
-            cmbItemID.ValueMember = "itemID";
-            cmbItemCode.DataSource = dt;
-            cmbItemCode.ValueMember = "itemCode";
+
+            supplier = new Supplier();
+            dt2 = new DataTable();
+            dt2 = supplier.getSupplier();
+
+            cmbSupName.ValueMember = "ID";
+            cmbSupName.DisplayMember = "Supplier";
+            cmbSupName.DataSource = dt2;
+
+            dt3 = new DataTable();
+            db = new Database();
+            dt3 = db.select("select location from warehouses");
+
+            cmbDestination.ValueMember = "location";
+            cmbDestination.DisplayMember = "location";
+            cmbDestination.DataSource = dt3;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtQty.Text))
             {
-                MessageBox.Show("Quantuty cannot be empty!");
+                MessageBox.Show("Quantity cannot be empty!");
             }
             else if (!txtQty.Text.Any(char.IsDigit))
             {
@@ -60,7 +71,7 @@ namespace FactoryWarehouseSystem
             }
             else
             {
-                Database db = new Database();
+                db = new Database();
                 dt = new DataTable();
                 dt = db.select("select * from GRNTemp");
                 int mark = 0;
@@ -84,31 +95,33 @@ namespace FactoryWarehouseSystem
                     string query = "insert into GRNTemp values (" + txtGRNID.Text + "," + cmbItemID.Text + "," + txtQty.Text + ",0)";
                     db.inserUpdateDelete(query);
                 }
-                dt = db.select("select * from GRNTemp");
+                dt = db.select("select itemID as [Item ID], qty as Quantity, isdelivered as [Delivary Status] from GRNTemp");
                 dataGridView1.DataSource = dt;
             }
         }
 
         private void cmbSupName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Supplier supplier = new Supplier();
-            dt = supplier.getSupplier(cmbSupName.Text);
-            string id = dt.Rows[0][0].ToString();
-            txtSupID.Text = id;
+            supplier = new Supplier();
+            dt = supplier.getSupplier(cmbSupName.Text);             
+            txtSupID.Text = dt.Rows[0][0].ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            int selectedItemId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
-            DialogResult dr = MessageBox.Show("Are you sure want to delete?", "Warning!", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
+            if (dataGridView1.CurrentRow!=null)
             {
-                Database db = new Database();
-                db.inserUpdateDelete("delete from GRNTemp where itemID = " + selectedItemId + "");
-                dt = new DataTable();
-                dt = db.select("select * from GRNTemp");
-                dataGridView1.DataSource = dt;
-            }
+                int selectedItemId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+                DialogResult dr = MessageBox.Show("Are you sure want to delete?", "Warning!", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    db = new Database();
+                    db.inserUpdateDelete("delete from GRNTemp where itemID = " + selectedItemId + "");
+                    dt = new DataTable();
+                    dt = db.select("select * from GRNTemp");
+                    dataGridView1.DataSource = dt;
+                }
+            }            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -129,7 +142,7 @@ namespace FactoryWarehouseSystem
             }
             else
             {
-                GoodRecieveNote grn = new GoodRecieveNote();
+                grn = new GoodRecieveNote();
                 grn.id = txtGRNID.Text;
                 grn.date = txtDate.Text;
                 grn.supID = txtSupID.Text;
@@ -137,6 +150,15 @@ namespace FactoryWarehouseSystem
                 MessageBox.Show("GRN Added Successfully!");
                 this.Close();
             }
+        }
+
+        private void cmbItemID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            item = new Item();
+            dt = new DataTable();
+            dt = item.getItemDetails(cmbItemID.SelectedValue.ToString());
+            txtItemCode.Text = dt.Rows[0][1].ToString();
+            
         }
     }
 }
