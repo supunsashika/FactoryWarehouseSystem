@@ -109,6 +109,11 @@ namespace FactoryWarehouseSystem
         }
         public void adjustMinimumStockBalance() { }
         public void viewStock() { }
-        public void updateStock() { }
+
+        public void updateStock(int itemID, string itemCode, string itemName, string unitPrice , string quantity, string rfid1)
+        {
+            db = new Database();
+            db.inserUpdateDelete("update item set itemCode ='" + itemCode + "', itemName ='" + itemName + "', unitPrice='" + unitPrice + "', qty='" + quantity + "', RFID='" + rfid1 + "' where itemID='" + itemID + "' ");
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace FactoryWarehouseSystem
         DataTable dt;
         Item item;
         RFID rfid;
+        string Mode = "";
         public AddNewItem()
         {
             InitializeComponent();
@@ -76,6 +77,7 @@ namespace FactoryWarehouseSystem
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnUpdate.Enabled = true;
             if (dataGridView1.CurrentCell!=null)
             {
                 int selected = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
@@ -117,41 +119,58 @@ namespace FactoryWarehouseSystem
             }
             else
             {
-                item = new Item();
-                item.ItemCode = txtItemCode.Text;
-                item.ItemName = txtItemName.Text;
-                item.ItemQty = Convert.ToInt32(txtQty.Text);
-                item.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
-                item.rfid = txtRFID.Text;
-
-                dt = item.getItemDetails();
-                dataGridView1.DataSource = dt;
-                SetDataGridDesign();
-
-                int mark = 0;
-                foreach (DataRow dr in dt.Rows)
+                if (Mode == "Edit")
                 {
-                    if (dr["Code"].ToString() == txtItemCode.Text)
-                    {
-                        MessageBox.Show("Item already Exists!");
-                        mark = 1;
-                        break;
-                    }
-                    else                    
-                        mark = 0;                    
-                }
-                if (mark == 0)
-                {
-                    item.addItem();
-                    MessageBox.Show("Item Added Successfully!");
+                    item = new Item();
+                    int selected = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                    item.updateStock(selected, txtItemCode.Text, txtItemName.Text, txtUnitPrice.Text, txtQty.Text, txtRFID.Text);
+                    MessageBox.Show("Item Updated Successfully!");
                     btnGetRFID.Enabled = false;
+                    btnSave.Enabled = false;
+                    btnCancal.Enabled = false;
+                    btnUpdate.Enabled = true;
+                    btnAddItem.Enabled = true;
+                    btnDelete.Enabled = true;
                     ControlElements(false);
-                    ClearFields();
                 }
+                else
+                {                   
+                    item = new Item();
+                    item.ItemCode = txtItemCode.Text;
+                    item.ItemName = txtItemName.Text;
+                    item.ItemQty = Convert.ToInt32(txtQty.Text);
+                    item.UnitPrice = Convert.ToDouble(txtUnitPrice.Text);
+                    item.rfid = txtRFID.Text;
 
-                dt = item.getItemDetails();
-                dataGridView1.DataSource = dt;
-                SetDataGridDesign();
+                    dt = item.getItemDetails();
+                    dataGridView1.DataSource = dt;
+                    SetDataGridDesign();
+
+                    int mark = 0;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        if (dr["Code"].ToString() == txtItemCode.Text)
+                        {
+                            MessageBox.Show("Item already Exists!");
+                            mark = 1;
+                            break;
+                        }
+                        else
+                            mark = 0;
+                    }
+                    if (mark == 0)
+                    {
+                        item.addItem();
+                        MessageBox.Show("Item Added Successfully!");
+                        btnGetRFID.Enabled = false;
+                        ControlElements(false);
+                        ClearFields();
+                    }
+
+                    dt = item.getItemDetails();
+                    dataGridView1.DataSource = dt;
+                    SetDataGridDesign();
+                }
             }
         }
 
@@ -163,6 +182,8 @@ namespace FactoryWarehouseSystem
             btnDelete.Enabled = true;
             btnGetRFID.Enabled = false;
             ControlElements(false);
+            btnUpdate.Enabled = true;
+            Mode = "";
         }
         private void ClearFields()
         {
@@ -178,5 +199,17 @@ namespace FactoryWarehouseSystem
             rfid = new RFID();
             txtRFID.Text = rfid.getRFID();
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Mode = "Edit";            
+                ControlElements(true);
+                btnSave.Enabled = true;
+                btnCancal.Enabled = true;
+                btnUpdate.Enabled = false;
+                btnAddItem.Enabled = false;
+                btnDelete.Enabled = false;                              
+            }
     }
 }
+

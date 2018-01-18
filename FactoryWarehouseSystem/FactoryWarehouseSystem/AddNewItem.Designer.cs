@@ -47,6 +47,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancal = new System.Windows.Forms.Button();
             this.btnGetRFID = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,12 +107,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(282, 311);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+//            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(309, 330);
+            this.btnDelete.Location = new System.Drawing.Point(399, 153);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(142, 43);
+            this.btnDelete.Size = new System.Drawing.Size(133, 31);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete Selected Item";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -207,19 +209,31 @@
             // btnGetRFID
             // 
             this.btnGetRFID.Enabled = false;
-            this.btnGetRFID.Location = new System.Drawing.Point(619, 142);
+            this.btnGetRFID.Location = new System.Drawing.Point(619, 153);
             this.btnGetRFID.Name = "btnGetRFID";
-            this.btnGetRFID.Size = new System.Drawing.Size(75, 43);
+            this.btnGetRFID.Size = new System.Drawing.Size(75, 31);
             this.btnGetRFID.TabIndex = 18;
             this.btnGetRFID.Text = "Get RFID";
             this.btnGetRFID.UseVisualStyleBackColor = true;
             this.btnGetRFID.Click += new System.EventHandler(this.btnGetRFID_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Location = new System.Drawing.Point(538, 153);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 31);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // AddNewItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 385);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnGetRFID);
             this.Controls.Add(this.btnCancal);
             this.Controls.Add(this.btnSave);
@@ -270,5 +284,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancal;
         private System.Windows.Forms.Button btnGetRFID;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

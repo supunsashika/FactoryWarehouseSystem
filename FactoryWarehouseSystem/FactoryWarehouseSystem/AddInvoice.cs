@@ -83,9 +83,10 @@ namespace FactoryWarehouseSystem
             dt = new DataTable();
             dt = item.getItemDetails();
             cmbItemID.DataSource = dt;
-            cmbItemID.ValueMember = "itemID";
+            cmbItemID.ValueMember = "ID";  
+                      
+            cmbItemCode.ValueMember = "Code";
             cmbItemCode.DataSource = dt;
-            cmbItemCode.ValueMember = "itemCode";
 
             //delete temp
             Database db = new Database();
